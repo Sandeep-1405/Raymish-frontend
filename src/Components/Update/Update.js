@@ -22,7 +22,7 @@ function Update(){
     const navigate = useNavigate()
 
     useEffect(()=>{
-        axios.get('http://localhost:3000/getuser/'+id)
+        axios.get('https://raymish-backend.vercel.app/getuser/'+id)
         .then(res=>{
             console.log(res)
             setname(res.data.name)
@@ -41,7 +41,7 @@ function Update(){
         e.preventDefault()
         if (name !== "" && description !== "" && category !== "" && website !== "" && googleMapsLink !== "" && instagramLink !== "" && locality !== "" && city !== "" ){
             seterror("")
-            axios.put('http://localhost:3000/update/'+id,{name,description,website,instagramLink,googleMapsLink,locality,city,category})
+            axios.put('https://raymish-backend.vercel.app/update/'+id,{name,description,website,instagramLink,googleMapsLink,locality,city,category})
             .then(res=>{
                 console.log(res)
                 navigate("/")

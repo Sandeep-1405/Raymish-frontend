@@ -16,7 +16,7 @@ function Home(){
         function fetchData(){
             if (filter === "All"){
                 setstyle(!style)
-                axios.get('http://localhost:3000/')
+                axios.get('https://raymish-backend.vercel.app/')
                 .then(res=>{
                     setstyle(!style)
                     //console.log(res.data)
@@ -25,7 +25,7 @@ function Home(){
                 .catch(error=>console.log(error))
             }else{
 
-                axios.get('http://localhost:3000/filtered-user/'+filter)
+                axios.get('https://raymish-backend.vercel.app/filtered-user/'+filter)
                 .then(res=>{
 
                     //console.log(res.data)
@@ -39,7 +39,7 @@ function Home(){
 
     function handleDelete(id){
         //console.log(id)
-        axios.delete('http://localhost:3000/delete/'+id)
+        axios.delete('https://raymish-backend.vercel.app/delete/'+id)
         .then(res=> {
             window.location.reload()
             //console.log(res)

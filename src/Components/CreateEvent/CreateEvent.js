@@ -22,7 +22,7 @@ function CreateEvent(){
         e.preventDefault()
         if (name !== "" && description !== "" && category !== "" && website !== "" && googleMapsLink !== "" && instagramLink !== "" && locality !== "" && city !== "" ){
             seterror("")
-            axios.post('http://localhost:3000/create',{name,description,website,instagramLink,googleMapsLink,locality,city,category})
+            axios.post('https://raymish-backend.vercel.app/create',{name,description,website,instagramLink,googleMapsLink,locality,city,category})
             .then(res=>{
                 console.log(res)
                 navigate("/")
