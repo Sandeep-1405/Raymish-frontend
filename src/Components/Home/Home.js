@@ -9,20 +9,25 @@ function Home(){
     const [data,setdata] = useState([])
     const [error,seterror] = useState("")
     const [filter,setfilter] = useState("All")
+    const [style,setstyle] = useState(true)
 
     useEffect(()=>{
         //console.log(filter)
         function fetchData(){
             if (filter === "All"){
+                setstyle(!style)
                 axios.get('http://localhost:3000/')
                 .then(res=>{
+                    setstyle(!style)
                     //console.log(res.data)
                     setdata(res.data)
                 })
                 .catch(error=>console.log(error))
             }else{
+
                 axios.get('http://localhost:3000/filtered-user/'+filter)
                 .then(res=>{
+
                     //console.log(res.data)
                     setdata(res.data)
                 })
@@ -43,7 +48,7 @@ function Home(){
     }
 
     return(
-        <div className='bg-primary home-card p-5'>
+        <div className={style?"true-card":"home-card"}>
             <h1 className='m-3 bg-light w-25 m-auto'>Events</h1>
             <div className='d-flex justify-content-around m-3'>
                 <Link to="/add-event" className='btn btn-success m-3'>+Add Event</Link>

@@ -52,9 +52,9 @@ function Update(){
         }
     }
     return(
-        <div className="shadow h-100 m-5 p-5 bg-primary">
+        <div className="bg-primary">
             
-            <div className="bg-light rounded m-md-5">
+            <div className="bg-light rounded m-3 w-75 m-auto m-3">
                 <h1 className="m-2">Update Event</h1>
                 <hr/>
                 <form onSubmit={onClickSubmit}>

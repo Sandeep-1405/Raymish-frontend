@@ -4,9 +4,17 @@
     border-radius: 8px;
 }
 .home-card{
-    padding-bottom: 100px;
+    padding-bottom: 150px;
+    padding: 16px;
+    background-color: blue;
+    height: 100%;
 }
 .select{
     width: 10vw;
     height: 40px;
+}
+.true-card{
+    height: 100vh;
+    background-color: blue;
+    padding: 16px;
 }
